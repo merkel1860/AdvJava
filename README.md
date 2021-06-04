@@ -1,5 +1,5 @@
 # AdvJava
-This repository basically review java topics from intermediate to advanced.
+This repository basically reviews java topics from intermediate to advanced.
 Comparable
 Comparator
 Interface
