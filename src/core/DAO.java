@@ -8,6 +8,7 @@ public class DAO {
     private static DAO instance = new DAO();
 
     private List<Person> personList = new ArrayList<>();
+    private Population citizens = new Population();
 
     private DAO (){
 
@@ -17,6 +18,10 @@ public class DAO {
 
     public List<Person> getPersonList() {
         return personList;
+    }
+
+    public Population getCitizens() {
+        return citizens;
     }
 
     public static void loadPersons(){

@@ -5,14 +5,30 @@ public class Citizen extends Person {
     private Address address;
 
 
-    public Citizen() {
+    public Citizen(int CIN, Person person) {
+        this.setFname(person.getFname());
+        this.setLname(person.getLname());
+        this.setYob(person.getYob());
+        this.CIN = CIN;
     }
+
+    public Citizen(String fname, String lname, int yob, int CIN) {
+        super(fname, lname, yob);
+        this.CIN = CIN;
+    }
+
+
 
     public Citizen(int CIN, Address address) {
         this.CIN = CIN;
         this.address = address;
     }
 
+    public void setPerson(Person person){
+        this.setFname(person.getFname());
+        this.setLname(person.getLname());
+        this.setYob(person.getYob());
+    }
     public int getCIN() {
         return CIN;
     }

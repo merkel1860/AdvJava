@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class Citizens implements Iterable<Citizen>{
+public class Population implements Iterable<Citizen>{
     private List<Citizen> citizens = new ArrayList<Citizen>();
 
     @Override
@@ -16,6 +16,13 @@ public class Citizens implements Iterable<Citizen>{
     @Override
     public void forEach(Consumer<? super Citizen> action) {
 
+    }
+
+    public void loadPersonDetails(){
+        for (Person person :DAO.getInstance().getPersonList()){
+            int cin = (int)(Math.random()*100);
+            citizens.add(new Citizen(cin, person));
+        }
     }
 
 }

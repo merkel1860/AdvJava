@@ -32,6 +32,20 @@ public class Main {
         System.out.println("Case two");
         DAO.getInstance().
                 getPersonList().
-                forEach(element -> System.out.println(element));
+                forEach(element -> System.out.println("Mr./Mrs."+element));
+
+        // Case three
+        System.out.println("Case three");
+        DAO.getInstance().
+                getPersonList().
+                forEach(System.out::println);
+
+        // Case four
+        System.out.println("Case four");
+        DAO.getInstance().getCitizens().loadPersonDetails();
+        for (Citizen citizen :DAO.getInstance().getCitizens()){
+            System.out.println(citizen.toString());
+        }
+
     }
 }
