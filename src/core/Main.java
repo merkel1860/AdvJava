@@ -1,5 +1,7 @@
 package core;
 
+import java.util.Iterator;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,5 +16,22 @@ public class Main {
         System.out.println(p1.compareTo(p2)>0?"P1 is older than P2":
         "P2 is older than P1");
 
+        // Initialization of personList.
+        DAO.loadPersons();
+        DAO.getInstance().getPersonList().add(p1);
+        DAO.getInstance().getPersonList().add(p2);
+
+        // Case One
+        System.out.println("Case one");
+        Iterator<Person> iterator = DAO.getInstance().
+                getPersonList().iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next().toString());
+        }
+        // Case two
+        System.out.println("Case two");
+        DAO.getInstance().
+                getPersonList().
+                forEach(element -> System.out.println(element));
     }
 }
